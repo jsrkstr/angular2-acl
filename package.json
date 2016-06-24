@@ -1,10 +1,12 @@
 {
   "name": "angular2-acl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Role-based permissions for AngularJS 2",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build_dist": "rm -rf dist && tsc",
+    "prepublish": "npm run typings && npm run build_dist",
+    "typings": "typings install"
   },
   "devDependencies": {
     "lodash": "^4.13.1",
@@ -20,10 +22,5 @@
     "url": "https://github.com/jsrockstar132/angular2-acl/issues"
   },
   "homepage": "https://github.com/jsrockstar132/angular2-acl#readme",
-  "scripts": {
-    "build_dist": "rm -rf dist && tsc",
-    "prepublish": "npm run typings && npm run build_dist",
-    "typings": "typings install"
-  },
   "typings": "./dist/index.d.ts"
 }

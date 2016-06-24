@@ -1,4 +1,3 @@
-/// <reference path="../typings/index.d.ts"/>
 
 /*
  * Ported from javascript project -

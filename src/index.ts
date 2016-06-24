@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts"/>
+
 /*
  * Ported from javascript project -
  * https://github.com/mikemclin/angular-acl/blob/master/src/angular-acl.js

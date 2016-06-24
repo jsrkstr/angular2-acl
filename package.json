@@ -1,6 +1,6 @@
 {
   "name": "angular2-acl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Role-based permissions for AngularJS 2",
   "main": "./dist/index.js",
   "scripts": {

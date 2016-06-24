@@ -1,0 +1,29 @@
+{
+  "name": "angular2-acl",
+  "version": "1.0.0",
+  "description": "Role-based permissions for AngularJS 2",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "lodash": "^4.13.1",
+    "typings": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jsrockstar132/angular2-acl.git"
+  },
+  "author": "Sachin Saluja <sachin.saluja132@gmail.com> (http://jsrockstar.in)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsrockstar132/angular2-acl/issues"
+  },
+  "homepage": "https://github.com/jsrockstar132/angular2-acl#readme",
+  "scripts": {
+    "build_dist": "rm -rf dist && tsc",
+    "prepublish": "npm run typings && npm run build_dist",
+    "typings": "typings install"
+  },
+  "typings": "./dist/index.d.ts"
+}

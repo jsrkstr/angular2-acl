@@ -17,7 +17,7 @@
     "url": "git+ssh://git@github.com/jsrockstar132/angular2-acl.git"
   },
   "author": "Sachin Saluja <sachin.saluja132@gmail.com> (http://jsrockstar.in)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jsrockstar132/angular2-acl/issues"
   },

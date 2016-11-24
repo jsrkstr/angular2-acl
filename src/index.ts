@@ -158,6 +158,32 @@ export class AclService {
     }
 
     /**
+     * Toggle ability of a role
+     * If role is empty, current current roles are used
+     *
+     * @param role
+     * @param ability
+     */
+    toggleAbility(role, ability) {
+        // Loop through roles
+        var roles = role ? [role] : this.data.roles;
+
+        roles.forEach(function(role){
+            if (!this.data.abilities[role]) {
+                this.data.abilities[role] = [];
+            }
+
+            if (_.contains(this.data.abilities[role], ability)) {
+                this.data.abilities[role] = _.without(this.data.abilities[role], ability)
+            } else {
+                this.data.abilities[role].push(ability);
+            }
+        });
+
+        this.save();
+    }
+
+    /**
      * Does current user have permission to do something?
      *
      * @param ability

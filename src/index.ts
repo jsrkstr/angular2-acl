@@ -163,20 +163,34 @@ export class AclService {
      *
      * @param role
      * @param ability
+     * @param [force] - force add or remove
      */
-    toggleAbility(role, ability) {
-        // Loop through roles
+    toggleAbility(role, ability, force) {
         var roles = role ? [role] : this.data.roles;
 
+        // Loop through roles
         roles.forEach(function(role){
             if (!this.data.abilities[role]) {
                 this.data.abilities[role] = [];
             }
 
-            if (_.contains(this.data.abilities[role], ability)) {
-                this.data.abilities[role] = _.without(this.data.abilities[role], ability)
-            } else {
+            var alreadyAdded = _.contains(this.data.abilities[role], ability);
+            var operation = !alreadyAdded;
+
+            if (!alreadyAdded && force === true) {
+                operation = true;
+            }
+
+            if (alreadyAdded && force === false) {
+                operation = false;
+            }
+
+            if (operation === true) {
                 this.data.abilities[role].push(ability);
+            }
+
+            if (operation === false){
+                this.data.abilities[role] = _.without(this.data.abilities[role], ability)
             }
         });
 

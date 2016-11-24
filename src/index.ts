@@ -169,7 +169,9 @@ export class AclService {
         var roles = role ? [role] : this.data.roles;
 
         // Loop through roles
-        roles.forEach(function(role){
+        for (var i = 0; i < roles.length; i++) {
+            var role = roles[i];
+
             if (!this.data.abilities[role]) {
                 this.data.abilities[role] = [];
             }
@@ -192,7 +194,7 @@ export class AclService {
             if (operation === false){
                 this.data.abilities[role] = _.without(this.data.abilities[role], ability)
             }
-        });
+        }
 
         this.save();
     }

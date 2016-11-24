@@ -176,7 +176,7 @@ export class AclService {
                 this.data.abilities[role] = [];
             }
 
-            var alreadyAdded = _.contains(this.data.abilities[role], ability);
+            var alreadyAdded = _.find(this.data.abilities[role], ability) ? true : false;
             var operation = !alreadyAdded;
 
             if (!alreadyAdded && force === true) {
